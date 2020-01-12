@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { useEffect } from 'react';
 import {
   SafeAreaView,
@@ -28,7 +20,7 @@ const Home = ({ navigation }) => {
         return;
       }
       backsound.play();
-      backsound.setVolume(1);
+      backsound.setVolume(0);
     });
     return () => {
       backsound.stop()
@@ -61,17 +53,17 @@ const Home = ({ navigation }) => {
             </TouchableWithoutFeedback>
           </ImageBackground>
           <ImageBackground style={{ width: '100%', height: 50, justifyContent: 'center', marginBottom: 20 }} source={require('./../../assets/img/button.png')}>
-            <TouchableWithoutFeedback onPress={() => handleClick('Penjumlahan')}>
+            <TouchableWithoutFeedback onPress={() => handleClick('Pengurangan')}>
               <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>PENGURANGAN</Text>
             </TouchableWithoutFeedback>
           </ImageBackground>
           <ImageBackground style={{ width: '100%', height: 50, justifyContent: 'center', marginBottom: 20 }} source={require('./../../assets/img/button.png')}>
-            <TouchableWithoutFeedback onPress={() => handleClick('Penjumlahan')}>
+            <TouchableWithoutFeedback onPress={() => handleClick('Perkalian')}>
               <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>PERKALIAN</Text>
             </TouchableWithoutFeedback>
           </ImageBackground>
           <ImageBackground style={{ width: '100%', height: 50, justifyContent: 'center', marginBottom: 20 }} source={require('./../../assets/img/button.png')}>
-            <TouchableWithoutFeedback onPress={() => handleClick('Penjumlahan')}>
+            <TouchableWithoutFeedback onPress={() => handleClick('Pembagian')}>
               <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>PEMBAGIAN</Text>
             </TouchableWithoutFeedback>
           </ImageBackground>

@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
@@ -13,11 +5,13 @@ import {
   Text,
   ImageBackground,
   TouchableOpacity,
-  Image
+  Image,
+  TouchableWithoutFeedback,
+  Alert
 } from 'react-native';
 var Sound = require('react-native-sound');
 
-const Penambahan = () => {
+const Penambahan = ({ navigation }) => {
   const [level, setLevel] = useState(1);
   let timesBy,
     timesByToAnswer
@@ -57,7 +51,7 @@ const Penambahan = () => {
         }
         wrong.play();
       });
-      alert('salah')
+      Alert.alert('Yaaaahh :(', 'Jawaban yang kamu pilih salah, jawaban yang benar adalah ' + correctAnswer)
     }
   }
 
@@ -94,7 +88,15 @@ const Penambahan = () => {
             ))}
           </View>
         </View>
+
       </SafeAreaView>
+      <View style={{ padding: 20, justifyContent: 'flex-end', position: 'absolute', bottom: 10, width: '100%' }}>
+        <ImageBackground style={{ width: '100%', height: 50, justifyContent: 'center', marginBottom: 20 }} source={require('./../../assets/img/button.png')}>
+          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+            <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>MENU AWAL</Text>
+          </TouchableWithoutFeedback>
+        </ImageBackground>
+      </View>
     </ImageBackground>
   );
 };
